@@ -62,10 +62,13 @@ function(pmids, batchSize = 200) {
   
   pb <- progress_bar$new(total = num_batches)
   
+  withProgress(message = 'Getting Citation Information.', detail = 'This may take a while...', value = 0, {
   for (i in 1:num_batches) {
     currIDs <- pmids[beg:end]
     pb$tick()
 
+    incProgress(1 / num_batches)
+    
     by_id <- TRUE
     if (length(currIDs) == 1) {
         by_id <- FALSE
@@ -82,5 +85,6 @@ function(pmids, batchSize = 200) {
     
     Sys.sleep(wait)
   }
+  })
   res
 }

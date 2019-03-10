@@ -43,6 +43,8 @@ get_article_info <-function(pmids, elements = NULL, show_progress = TRUE) {
   
   # post batchSize then get retmax at a time
   batchNum = 1
+  
+  withProgress(message = 'Getting Additional Information.', detail = 'This may take a while...', value = 0, {
   while (start <= n) {
     end <- min(start+batchSize-1, n)
     upload <- entrez_post(db = "pubmed", id = pmids[start:end])
@@ -51,6 +53,7 @@ get_article_info <-function(pmids, elements = NULL, show_progress = TRUE) {
     if (show_progress) {
         cat("Getting article info for batch #", batchNum, "\n")
         pb <- progress_bar$new(total = ceiling(batchSize/retmax))
+        incProgress(1 / (ceiling(n/batchSize)))
         batchNum <- batchNum + 1
     }
     for (st in seq(0, batchSize-1, by = retmax)) {
@@ -63,6 +66,7 @@ get_article_info <-function(pmids, elements = NULL, show_progress = TRUE) {
     }
     
   }
+  })
   return(res)
 }
 
