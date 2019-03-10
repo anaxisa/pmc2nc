@@ -2,7 +2,8 @@
 #'
 #' `get_pmc_cited_in` takes a vector of article PMIDs and returns elink results containing
 #' the PMIDs of articles that cite each of the given articles.
-#'
+#' 
+#' @details
 #' Finds articles that cite the provided set of articles. This
 #' function is a wrapper for the `entrez_link` function from
 #' `rentrez`. If more than 1 PMID is specified, requests are made in batches, ensuring that
@@ -27,7 +28,7 @@ function(pmids, batchSize = 200) {
   if (batchSize <= 0 || batchSize > 200) {
     stop("Batch size must be betwen 1 and 200")
   } 
-
+  
   n <- length(pmids)
 
   # if 1 batch, return the results

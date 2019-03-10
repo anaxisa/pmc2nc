@@ -7,7 +7,7 @@
 #' target IDs with at least 'count' citations
 #' 
 #' @param e an edge list, as obtained from `generateEdgeList`
-#' @parama count threshold value for citation counts
+#' @param a count threshold value for citation counts
 #' @return A list with the following objects:
 #'         edgeList - the filtered edge list
 #'         counts - a tibble with one column for target PMIDS and one column, 'n', containing the corresponding frequency of citations

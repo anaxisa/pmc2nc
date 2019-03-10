@@ -8,6 +8,8 @@ filterEdgeList(e, count)
 }
 \arguments{
 \item{e}{an edge list, as obtained from `generateEdgeList`}
+
+\item{a}{count threshold value for citation counts}
 }
 \value{
 A list with the following objects:

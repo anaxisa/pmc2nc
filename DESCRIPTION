@@ -1,9 +1,9 @@
 Package: pmc2nc
 Type: Package
 Title: PubMed Central Citation Network Construction
-Version: 1.0
-Date: 2018-11-08
-Author: Garrett M. Dancik and Anayancy Ramos 
+Version: 1.01
+Date: 2019-03-10
+Author: Garrett M. Dancik, Myron Zhang, and Anayancy Ramos 
 Maintainer: Garrett Dancik <dancikg@easternct.edu>
 Description: Retrieves PMC citations and genenerates edge lists for PMC citation networks 
 License: GPL (>= 2)

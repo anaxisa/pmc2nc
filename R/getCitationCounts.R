@@ -3,14 +3,11 @@
 #' `getCitationCounts` counts the number of citations for each target ID in an edge list
 
 #' @details
-#' `elink` must be one of the following: a list containing one elink object, 
-#' with list name corresponding to target PMID; a list of elink objects,
-#' with names corresponding to target PMIDs, or a list of any combination
-#' of the above. These corresond to a single PMID, a single batch,
-#' and multiple batches, respectively.
+#' The edge list `e` must have a `Target` column. The number of citations for each
+#' `Target` are counted. All citations per `Target` are assumed to be unique.
 #' 
 #' @param e an edge list, as obtained from `generateEdgeList` 
-#' @return A tibble with one column for target PMIDS and one column, 'n', containing the corresponding frequency of citations
+#' @return A tibble with one column for target PMIDS and one column, 'n', containing the corresponding citation frequencies
 #' @seealso \code{\link{generateEdgeList}} for generating an edge list
 #' 
 #' @examples
